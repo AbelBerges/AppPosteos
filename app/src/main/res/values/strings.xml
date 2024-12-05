@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">AppPosteos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registro_usuario">Nombre de usuario</string>
+    <string name="registro_email">Correo electrónico</string>
+    <string name="registro_clave">Contraseña</string>
+    <string name="registro_confirmar_clave">Confirme la constraseña</string>
+    <string name="mis_espriencias">Mis experiencias</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_filtros">Filtros</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="login_correo">Ingrese el correo</string>
+    <string name="login_clave">Ingrese la contraseña</string>
+    <string name="titulo_registro">REGISTRATE AHORA</string>
+    <string name="tenes_cuenta">¿No tenés cuenta?</string>
+    <string name="registrate_aqui">REGISTRATE AQUÍ</string>
+    <string name="boton_iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="boton_registrate">REGISTRATE</string>
+    <string name="para_post_titulo">Realizar un Post</string>
+    <string name="para_post_lugar">Lugar que visitaste</string>
+    <string name="para_post_descripcion">Describe tu experiencia</string>
+    <string name="para_post_duracion">Duración del viaje (Ej: 3 días)</string>
+    <string name="para_post_presupuesto">Presupuesto estimado</string>
+    <string name="para_post_boton_publicar">PUBLICAR</string>
+    <string name="image_descripcion">Describe tu imagen</string>
+    <string name="lugar">Lugar</string>
+    <string name="descripcion">Descripción</string>
+    <string name="instagram">Instagram</string>
+    <string name="num_publicaciones">0</string>
+    <string name="publicaciones">PUBLICACIONES</string>
+    <string-array name="categoria_array">
+        <item>Naturaleza</item>
+        <item>Montaña</item>
+        <item>Aventura</item>
+        <item>Cultura</item>
+        <item>Playa</item>
+    </string-array>
+    
+    
+    <string name="back4app_server_url">https://parseapi.back4app.com</string>
+    <string name="back4app_app_id">XxqLRt3iikfM8mdYG99ke8JlQ0WdF8CjkWaYOgOv</string>
+    <string name="back4app_client_key">vO2TF8IJg18AISVcf6AeDlxFfH2UEh3Xi5Lb4k5t</string>
+
+</resources>
