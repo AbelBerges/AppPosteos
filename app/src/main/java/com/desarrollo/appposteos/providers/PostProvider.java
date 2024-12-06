@@ -1,6 +1,7 @@
 package com.desarrollo.appposteos.providers;
 
 import android.graphics.PorterDuff;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -27,18 +28,21 @@ public class PostProvider {
         elPosteo.put("duracion", post.getDuracion());
         elPosteo.put("categoria", post.getCategoria());
         elPosteo.put("presupuesto", post.getPresupuesto());
+        elPosteo.put("publicaciones", ParseUser.getCurrentUser());
+        //String titulo, String descripcion, int duracion, String categoria, double presupuesto, List<String> imagenes
+        Log.d("Usuario ", "Muestro el USUARIO ACTUAL: " + elPosteo.get("publicaciones"));
         elPosteo.saveInBackground(error -> {
             if (error == null) {
                 ParseRelation<ParseObject> relacion = elPosteo.getRelation("imagenes");
                 for (String direccion : post.getImagenes()) {
                     ParseObject imgObjeto = new ParseObject("Image");
                     imgObjeto.put("url", direccion);
-                    imgObjeto.saveInBackground(imgError ->{
+                    imgObjeto.saveInBackground(imgError -> {
                         if (imgError == null){
                             relacion.add(imgObjeto);
-                            elPosteo.saveInBackground(publicado ->{
+                            elPosteo.saveInBackground(publicado -> {
                                 if (publicado == null){
-                                    resultado.setValue("Post publicado");
+                                    resultado.setValue("Post publicado con exito");
                                 } else {
                                     resultado.setValue("Error al guardar la relación con las imágenes: " + publicado.getMessage());
                                 }
@@ -67,7 +71,7 @@ public class PostProvider {
         elQuery.whereEqualTo("user", elUsuario);
         //probar si funciona con otra variable user
         elQuery.include("user");
-        elQuery.findInBackground((posteos, error)->{
+        elQuery.findInBackground((posteos, error)-> {
             if (error == null){
                 List<Post> listado = new ArrayList<>();
                 for (ParseObject elObjeto: posteos) {

@@ -42,7 +42,6 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPostBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        viewModel = new ViewModelProvider(this).get(PostViewModel.class);
         setupCategorySpinner();
         setupRecycleView();
         setupViewModels();
@@ -57,8 +56,9 @@ public class PostActivity extends AppCompatActivity {
     }
 
     private void setupViewModels(){
-        viewModel.getPostSuccess().observe(this, success ->{
-            String message = success ? "Post publicado con exito" : "Erro al publicar";
+        viewModel = new ViewModelProvider(PostActivity.this).get(PostViewModel.class);
+        viewModel.getPostSuccess().observe(this, success -> {
+            String message = success ? "Post publicado con exito" : "Error al publicar. ViewModel";
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             if (success) finish();
         });
@@ -122,6 +122,8 @@ public class PostActivity extends AppCompatActivity {
         //Después pongo las validaciones
         Post temp = new Post(elTitulo,laDescripcion,laDuracion,laCategoria,elPresupuesto,new ArrayList<>(imageUrl));
         viewModel.publicar(temp);
+       // Post post=new Post(titulo,descripcion, Integer.parseInt(duracionStr),categoria,presupuesto ,new ArrayList<>(imagenesUrls));
+       // postViewModel.publicar(post);
     }
 
     private void updateRecyclerViewVisibility(){
