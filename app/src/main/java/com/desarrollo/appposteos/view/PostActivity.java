@@ -8,22 +8,17 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
-import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-
 import com.desarrollo.appposteos.R;
 import com.desarrollo.appposteos.adapters.ImageAdapter;
-import com.desarrollo.appposteos.adapters.PostAdapter;
 import com.desarrollo.appposteos.databinding.ActivityPostBinding;
 import com.desarrollo.appposteos.model.Post;
 import com.desarrollo.appposteos.util.ImageUtils;
@@ -52,7 +47,7 @@ public class PostActivity extends AppCompatActivity {
         setupRecycleView();
         setupViewModels();
         setupGalleryLauncher();
-
+        binding.btnPublicarPost.setOnClickListener(v-> publicarPost());
     }
     private void setupRecycleView(){
         adapter = new ImageAdapter(imageUrl, this);

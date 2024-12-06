@@ -2,6 +2,7 @@ package com.desarrollo.appposteos.view;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,5 +48,12 @@ public class HomeActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void hideProgressBar(){
+        View progressBar = findViewById(R.id.progress_layout);
+        if (progressBar != null){
+            progressBar.setVisibility(View.GONE);
+        }
     }
 }
