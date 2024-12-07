@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
 
         ((AppCompatActivity) requireActivity()).setSupportActionBar(binding.tools);
 
-        binding.fab.setOnClickListener(v ->{
+        binding.fab.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), PostActivity.class);
             startActivity(intent);
         });
@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem items){
         if (items.getItemId() == R.id.itemLogout) {
-            authProvider.logout().observe(getViewLifecycleOwner(), logoutREsult ->{
+            authProvider.logout().observe(getViewLifecycleOwner(), logoutREsult -> {
                 if(logoutREsult != null && logoutREsult){
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

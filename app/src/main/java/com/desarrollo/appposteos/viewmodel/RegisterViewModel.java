@@ -27,7 +27,7 @@ public class RegisterViewModel extends ViewModel {
         parseUser.setPassword(user.getPassword());
 
         //Hacemos el registro en parse
-        parseUser.signUpInBackground(error ->{
+        parseUser.signUpInBackground(error -> {
             if (error == null){
                 registerResult.setValue("Registro exitoso");
             } else {

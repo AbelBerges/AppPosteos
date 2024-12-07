@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     showToast("El campo contraseña no puede estar vacío");
                 }
 
-                viewModel.login(correo, pass).observe(MainActivity.this, userId ->{
+                viewModel.login(correo, pass).observe(MainActivity.this, userId -> {
                     if (userId != null){
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(intent);

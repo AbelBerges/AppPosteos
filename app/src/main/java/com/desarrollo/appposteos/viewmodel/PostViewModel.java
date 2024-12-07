@@ -24,7 +24,7 @@ public class PostViewModel extends ViewModel {
     }
 
     public void publicar(Post post){
-        postProvider.addPost(post).observeForever(resultado ->{
+        postProvider.addPost(post).observeForever(resultado -> {
             if ("Post publicado con exito".equals(resultado)){
                 postSuccess.setValue(true);
             } else {

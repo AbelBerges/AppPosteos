@@ -15,7 +15,7 @@ public class MainViewModel extends ViewModel {
 
     public LiveData<String> login(String email, String pass){
         MutableLiveData<String> loginResult = new MutableLiveData<>();
-        authProvider.signIn(email,pass).observeForever(userId->{
+        authProvider.signIn(email,pass).observeForever(userId -> {
             loginResult.setValue(userId);
         });
         return loginResult;

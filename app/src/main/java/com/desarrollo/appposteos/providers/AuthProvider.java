@@ -31,7 +31,7 @@ public class AuthProvider {
         ParseUser usuario = new ParseUser();
         usuario.setUsername(email);
         usuario.setPassword(pass);
-        usuario.signUpInBackground(error ->{
+        usuario.signUpInBackground(error -> {
             if (error == null){
                 //Si no hay error el registro es exitoso
                 result.setValue(usuario.getObjectId());

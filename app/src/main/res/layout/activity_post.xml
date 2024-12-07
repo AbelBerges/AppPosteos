@@ -133,6 +133,7 @@
                 </Button>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
     </androidx.core.widget.NestedScrollView>
     <LinearLayout
         android:layout_width="match_parent"
@@ -142,9 +143,9 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="bottom"
             android:src="@drawable/barra_superior"
             android:scaleType="centerCrop">
         </ImageView>
     </LinearLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -96,7 +96,7 @@ public class PerfilFragment extends Fragment {
     }
 
     private void setupGalleryLauncher(){
-        galleryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), resultado ->{
+        galleryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), resultado -> {
             if (resultado.getResultCode() == Activity.RESULT_OK && resultado.getData() != null){
                 Uri imgUri = resultado.getData().getData();
                 if (imgUri != null){
@@ -107,7 +107,7 @@ public class PerfilFragment extends Fragment {
     }
 
     private void setupProfileImageClick(){
-        binding.circuloImageView.setOnClickListener(v ->{
+        binding.circuloImageView.setOnClickListener(v -> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 ImageUtils.pedirPermisos(requireActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
             }
@@ -125,7 +125,7 @@ public class PerfilFragment extends Fragment {
                     ParseUser usuarioActual = ParseUser.getCurrentUser();
                     if (usuarioActual != null){
                         usuarioActual.put("foto_perfil", imgUrl);
-                        usuarioActual.saveInBackground(err ->{
+                        usuarioActual.saveInBackground(err -> {
                             if (err == null){
                                 Toast.makeText(requireContext(), "Foto subida correctamente", Toast.LENGTH_SHORT).show();
                             } else {

@@ -84,7 +84,7 @@ public class PostActivity extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void setupGalleryLauncher(){
-        galleryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),resultado ->{
+        galleryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),resultado -> {
             if (resultado.getResultCode() == Activity.RESULT_OK && resultado.getData() != null){
                 Uri imageUri = resultado.getData().getData();
                 if (imageUri != null && imageUrl.size() < MAX_IMAGES){
@@ -122,8 +122,6 @@ public class PostActivity extends AppCompatActivity {
         //Después pongo las validaciones
         Post temp = new Post(elTitulo,laDescripcion,laDuracion,laCategoria,elPresupuesto,new ArrayList<>(imageUrl));
         viewModel.publicar(temp);
-       // Post post=new Post(titulo,descripcion, Integer.parseInt(duracionStr),categoria,presupuesto ,new ArrayList<>(imagenesUrls));
-       // postViewModel.publicar(post);
     }
 
     private void updateRecyclerViewVisibility(){
